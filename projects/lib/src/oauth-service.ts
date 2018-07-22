@@ -167,14 +167,14 @@ export class OAuthService extends AuthConfig {
         this.restartRefreshTimerIfStillLoggedIn();
     }
 
-    public loadDiscoveryDocumentAndTryLogin(options: LoginOptions = null) {
-        return this.loadDiscoveryDocument().then(doc => {
+    public loadDiscoveryDocumentAndTryLogin(options: LoginOptions = null, fullUrl : string = null) {
+        return this.loadDiscoveryDocument(fullUrl).then(doc => {
             return this.tryLogin(options);
         });
     }
 
-    public loadDiscoveryDocumentAndLogin(options: LoginOptions = null) {
-        return this.loadDiscoveryDocumentAndTryLogin(options).then(_ => {
+    public loadDiscoveryDocumentAndLogin(options: LoginOptions = null, fullUrl: string = null) {
+        return this.loadDiscoveryDocumentAndTryLogin(options, fullUrl).then(_ => {
             if (!this.hasValidIdToken() || !this.hasValidAccessToken()) {
                 this.initImplicitFlow();
                 return false;

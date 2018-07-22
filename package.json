@@ -11,12 +11,12 @@
     "e2e": "ng e2e",
     "tsc": "tsc",
     "docs": "npm run docs:build -- --disableCoverage --disablePrivate --disableInternal --includes docs-src",
-    "docs:build": "compodoc -p projects/lib/tsconfig.lib.json -n angular-oauth2-oidc -d docs --hideGenerator",
+    "docs:build": "compodoc -p projects/lib/tsconfig.lib.json -n angular-oauth2-ci-oidc -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "format": "prettier --single-quote --write projects/**/*.ts",
     "copy:readme": "cpr README.md dist/lib/README.md --overwrite"
-  }, 
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "6.0.0",
@@ -30,7 +30,7 @@
     "@angular/platform-browser-dynamic": "6.0.0",
     "@angular/router": "6.0.0",
     "@webcomponents/custom-elements": "^1.1.0",
-    "angular-oauth2-oidc": "^2.1.8",
+    "angular-oauth2-ci-oidc": "^1.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.1",
     "jsrsasign": "^8.0.12",
